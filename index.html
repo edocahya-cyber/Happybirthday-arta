@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Riski</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #111, #1c1c1c);
+    color: #fff;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    height: 100vh;
+    padding: 40px 25px;
+    box-sizing: border-box;
+    text-align: center;
+    animation: fade 0.8s ease;
+}
+
+.slide.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 75%;
+    max-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(255, 105, 135, 0.4);
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ff6f91;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff6f91, #ff9671);
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 25px rgba(255,105,135,0.5);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 14px;
+    color: #ffb3c6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+    <h1>Happy Birthday 🎂</h1>
+    <p>
+        Hari ini adalah hari spesial untuk seseorang yang sangat berarti.
+        Terima kasih sudah hadir dan memberi warna indah dalam hidupku.
+    </p>
+    <button class="btn" onclick="nextSlide()">Klik Selanjutnya ✨</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+    <img src="foto1.jpg">
+    <p>
+        Senyummu adalah hal kecil yang selalu berhasil
+        membuat hariku terasa lebih baik 🤍
+    </p>
+    <button class="btn" onclick="nextSlide()">Selanjutnya →</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+    <img src="foto2.jpg">
+    <p>
+        Di setiap langkahmu, aku selalu berharap
+        kebahagiaan dan ketenangan menyertaimu.
+    </p>
+    <button class="btn" onclick="nextSlide()">Lanjut Lagi →</button>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+    <img src="foto3.jpg">
+    <p>
+        Terima kasih sudah menjadi pribadi yang kuat,
+        lembut, dan penuh kasih.
+    </p>
+    <button class="btn" onclick="nextSlide()">Hampir Selesai ✨</button>
+</div>
+
+<!-- SLIDE 5 (PENUTUP) -->
+<div class="slide">
+    <img src="foto4.jpg">
+    <h1>Riski Arta Aulia 🤍</h1>
+    <p>
+        Semoga semua doa baik selalu menemukan jalannya padamu.
+        Selamat ulang tahun, semoga bahagia selalu menyertaimu.
+    </p>
+    <div class="signature">
+        — Dari seseorang yang selalu mendoakanmu - Edo Cahya Septiyawan 
+    </div>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function nextSlide() {
+    slides[current].classList.remove("active");
+    current++;
+    if (current < slides.length) {
+        slides[current].classList.add("active");
+    }
+}
+</script>
+
+</body>
+</html>
