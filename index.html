@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    overflow: hidden;
+}
+
+.slide {
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.slide.active {
+    display: flex;
+}
+
+img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ffd89b, #f76b1c);
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.9);
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIK -->
+<audio id="music" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">▶ Play Music</button>
+
+<div class="slide">
+    <img src="foto5.jpg">
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+    <h1>Happy Birthday 🎂</h1>
+    <p>
+        Hari ini adalah hari spesial untuk seseorang yang sangat berarti.
+        Terima kasih sudah hadir dan memberi warna indah dalam hidupku.
+    </p>
+    <button onclick="nextSlide()">Klik Selanjutnya →</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+    <img src="foto1.jpg">
+    <p>
+       Senyummu adalah hal kecil yang selalu berhasil
+        membuat hariku terasa lebih baik 🤍 Terima kasih sudah hadir,  
+        menemani, dan bertahan sampai hari ini 💕
+    </p>
+    <button onclick="nextSlide()">Lanjut →</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+    <img src="foto2.jpg">
+    <p>
+        Di setiap langkahmu, aku selalu berharap
+        kebahagiaan dan ketenangan menyertaimu. Semoga semua mimpimu tercapai  
+        dan senyummu tak pernah pudar ✨
+    </p>
+    <button onclick="nextSlide()">Lanjut →</button>
+</div>
+
+  <!-- SLIDE 4 -->
+<div class="slide">
+    <img src="foto3.jpg">
+    <p>
+        Terima kasih sudah menjadi pribadi yang kuat,
+        lembut, dan penuh kasih.
+    </p>
+    <button class="btn" onclick="nextSlide()">Hampir Selesai ✨</button>
+</div>
+
+<!-- SLIDE 5 (PENUTUP) -->
+<div class="slide">
+    <img src="foto4.jpg">
+    <h1>Riski Arta Aulia 🤍</h1>
+    <p>
+Semoga semua doa baik selalu menemukan jalannya padamu.
+        Selamat ulang tahun, semoga bahagia selalu menyertaimu.
+    </p>
+    <div class="signature">
+        — Dari seseorang yang selalu mendoakanmu - Edo Cahya Septiyawan 
+    </div>
+
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const music = document.getElementById("music");
+const musicBtn = document.querySelector(".music-btn");
+
+function nextSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide++;
+    if (currentSlide < slides.length) {
+        slides[currentSlide].classList.add("active");
+    }
+}
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        musicBtn.textContent = "❚❚ Pause";
+    } else {
+        music.pause();
+        musicBtn.textContent = "▶ Play Music";
+    }
+}
+</script>
+
+</body>
+</html>
